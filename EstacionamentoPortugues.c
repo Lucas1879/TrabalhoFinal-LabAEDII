@@ -23,7 +23,7 @@ int  topo(pilha s);
 int main()
 {
     pilha estacionamento, rua;
-    int i, carro, opcao, total=0;
+    int i, carro, opcao, total=0, r, c;
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -71,7 +71,7 @@ int main()
     }while(opcao != 4);
 
 
-    /*printf("Apresentando os carros no estacionamento:\n");
+    printf("Apresentando os carros no estacionamento:\n");
     mostra(estacionamento);
     printf("\nApresentando os carros na rua:");
     mostra(rua);
@@ -218,7 +218,7 @@ int main()
     }
 
     printf("\nApresentando os carros no estacionamento:\n");
-    mostra(estacionamento);*/
+    mostra(estacionamento);
 }
 
 void cria(pilha *s)
