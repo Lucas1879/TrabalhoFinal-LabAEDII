@@ -23,7 +23,7 @@ int  topo(pilha s);
 int main()
 {
     pilha estacionamento, rua;
-    int i, carro, opcao, total=0, r, c;
+    int i, carro, opcao, total=0, f, r, c;
 
     setlocale(LC_ALL, "Portuguese");
 
@@ -36,12 +36,12 @@ int main()
         printf("[2] Retirar o carro do estacionamento\n");
         printf("[3] Ver os carros que estão no estacionamento\n");
         printf("[4] Ir embora\n");
-        printf("Digite o numero da função que deseja para ser atendido: ");
+        printf("Digite o número da função que deseja para ser atendido: ");
         scanf("%d", &opcao);
 
         switch(opcao){
             case 1: if (total == 20){
-                        printf("Estacionamento cheio! Tente novamente mais tarde.");
+                        printf("\nEstacionamento cheio! Tente novamente mais tarde.\n");
                         return 0;
                     }
                     total++;
@@ -57,168 +57,1632 @@ int main()
                             i = desempilha(&estacionamento, &carro);
                             total--;
                         }
+
+                        if (carro == 1 && total == 2){
+                            i = desempilha(&estacionamento, &carro);
+                            if (i != 0){
+                                total--;
+                                r = carro;
+                                empilha(&rua, r);
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                            }
+                        }
+
+                        if (carro == 1 && total == 3){
+                            for(f=0; f<2; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                            }
+                        }
+
+                        if (carro == 1 && total == 4){
+                            for(f=0; f<3; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                            }
+                        }
+
+                        if (carro == 1 && total == 5){
+                            for(f=0; f<4; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 4;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                            }
+                        }
                     }
+
+                    if (carro == 1 && total == 6){
+                            for(f=0; f<5; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 7){
+                            for(f=0; f<6; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 8){
+                            for(f=0; f<7; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 9){
+                            for(f=0; f<8; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 10){
+                            for(f=0; f<9; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 11){
+                            for(f=0; f<10; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 12){
+                            for(f=0; f<11; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 13){
+                            for(f=0; f<12; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 14){
+                            for(f=0; f<13; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 15){
+                            for(f=0; f<14; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 16){
+                            for(f=0; f<15; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 15;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 17){
+                            for(f=0; f<16; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 15;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 16;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 18){
+                            for(f=0; f<17; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 15;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 16;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 17;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 19){
+                            for(f=0; f<18; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 15;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 16;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 17;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 18;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
+                    if (carro == 1 && total == 20){
+                            for(f=0; f<19; f++){
+                                i = desempilha(&estacionamento, &carro);
+                                if (i != 0){
+                                    total--;
+                                    r = carro;
+                                    empilha(&rua, r);
+                                }
+                            }
+                            i = desempilha(&estacionamento, &carro);
+                            total--;
+                            if (!estaVazia(rua)){
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 1;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 2;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                }
+                                r = carro;
+                                i = desempilha(&rua, &r);
+                                if (i != 0){
+                                    c = 3;
+                                    empilha(&estacionamento, c);
+                                    total++;
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 4;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 5;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 6;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 7;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 8;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 9;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 10;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 11;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 12;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 13;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 14;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 15;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 16;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 17;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 18;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                    r = carro;
+                                    i = desempilha(&rua, &r);
+                                    if (i != 0){
+                                        c = 19;
+                                        empilha(&estacionamento, c);
+                                        total++;
+                                    }
+                                }
+                            }
+                    }
+
                     break;
 
             case 3: mostra(estacionamento);
                     break;
 
-            case 4: printf("Obrigado pela preferência! Volte sempre.\n");
+            case 4: printf("\nObrigado pela preferência, volte sempre!\n\n");
                     break;
 
             default: printf("Função inválida, tente outra.\n");
         }
+        }
     }while(opcao != 4);
-
-
-    printf("Apresentando os carros no estacionamento:\n");
-    mostra(estacionamento);
-    printf("\nApresentando os carros na rua:");
-    mostra(rua);
-
-    printf("O carro 2 precisa ser retirado do estacionamento.\n\n");
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0){
-            printf("Carro retirado do estacionamento = %d\n", c);
-            r = c;
-            empilha(&rua, r);
-        }
-    }
-    if (!estaVazia(estacionamento))
-    {
-        i = desempilha(&estacionamento, &c);
-        if (i != 0)
-            printf("Carro retirado do estacionamento = %d\n", c);
-    }
-
-    printf("\nApresentando os carros no estacionamento:\n");
-    mostra(estacionamento);
-    printf("\nApresentando os carros na rua:\n");
-    mostra(rua);
-
-    printf("\nColocando os carros de volta no estacionamento:\n");
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-    if (!estaVazia(rua))
-    {
-        i = desempilha(&rua, &r);
-        if (i != 0){
-            printf("Carro retirado da rua = %d\n", r);
-            c = r;
-            empilha(&estacionamento, c);
-        }
-    }
-
-    printf("\nApresentando os carros no estacionamento:\n");
-    mostra(estacionamento);
 }
 
 void cria(pilha *s)
@@ -246,14 +1710,16 @@ void mostra(pilha s)
 
     aux = s.topo;
     if (aux == NULL)
-        printf("\nNenhum carro encontrado\n\n");
+        printf("\nEstacionamento vazio! Nenhum carro foi encontrado.\n\n");
     else
     {
+        printf("\nCarros que estão guardados:\n");
         while (aux != NULL)
         {
             printf("Carro %d\n", aux->dado);
             aux = aux->prox;
         }
+        printf("\n");
     }
 }
 
@@ -263,7 +1729,7 @@ int  desempilha(pilha *s, int *d)
 
     if (s->topo == NULL)
     {
-        printf("\nEstacionamento vazio! Seu carro não foi encontrado.\n\n");
+        printf("\nEstacionamento vazio! Nenhum carro foi encontrado.\n\n");
         return 0;
     }
 
